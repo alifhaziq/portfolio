@@ -16,13 +16,8 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', href: 'data:,' }
       ]
-    },
-    // Base URL for GitHub Pages deployment
-    baseURL: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/'
+    }
   },
-  css: ['~/assets/css/main.css'],
-  // Enable static site generation for GitHub Pages
-  ssr: false,
-  target: 'static'
+  css: ['~/assets/css/main.css']
 })
 
