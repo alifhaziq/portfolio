@@ -6,7 +6,7 @@ A modern, responsive portfolio website built with Nuxt.js 3 and Tailwind CSS.
 
 **[View Live Portfolio →](https://your-portfolio-link.vercel.app)**
 
-> Update this link after deployment!
+> Deploy to Vercel and update this link!
 
 ## 🚀 Features
 
@@ -114,35 +114,29 @@ npm run generate
 
 ## 🌐 Deployment
 
-### GitHub Pages (Current)
+### Recommended: Vercel
 
-**Live Site:** [https://alifhaziq.github.io/portfolio/](https://alifhaziq.github.io/portfolio/)
+**Deploy to Vercel (Easiest & Best for Nuxt.js):**
 
-**To Deploy Updates:**
+1. Go to [vercel.com](https://vercel.com) and sign up with GitHub
+2. Click "Add New Project" → Import your `portfolio` repository
+3. Vercel auto-detects Nuxt.js settings
+4. Click "Deploy"
+5. Done! Your site is live with auto-deployments on every push
 
-1. Make your changes to the code
-2. Run the deployment script:
-```powershell
-.\deploy.ps1
-```
-
-Or manually:
-```bash
-npm run generate
-git checkout gh-pages
-# Copy files from .output/public to root
-git add -A
-git commit -m "Deploy update"
-git push origin gh-pages
-git checkout main
-```
+**Benefits:**
+- ✅ Automatic deployments when you push to GitHub
+- ✅ Free SSL/HTTPS
+- ✅ Free custom domain support
+- ✅ Perfect Nuxt.js support
+- ✅ Lightning-fast CDN
 
 ### Other Platforms
 
 This portfolio can also be deployed to:
-- **Vercel** - [vercel.com](https://vercel.com) (Recommended for auto-deployment)
 - **Netlify** - [netlify.com](https://netlify.com)
 - **Azure Static Web Apps** - [azure.microsoft.com](https://azure.microsoft.com)
+- **GitHub Pages** - [pages.github.com](https://pages.github.com)
 
 ## 📄 License
 
