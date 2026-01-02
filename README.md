@@ -114,20 +114,35 @@ npm run generate
 
 ## 🌐 Deployment
 
-This Nuxt.js application can be deployed to various platforms:
+### GitHub Pages (Current)
 
-- **Vercel** - [vercel.com](https://vercel.com)
-- **Netlify** - [netlify.com](https://netlify.com)
-- **Azure Static Web Apps** - [azure.microsoft.com](https://azure.microsoft.com)
-- **GitHub Pages** - [pages.github.com](https://pages.github.com)
+**Live Site:** [https://alifhaziq.github.io/portfolio/](https://alifhaziq.github.io/portfolio/)
 
-For static site generation (recommended for portfolio sites), use:
+**To Deploy Updates:**
 
-```bash
-npm run generate
+1. Make your changes to the code
+2. Run the deployment script:
+```powershell
+.\deploy.ps1
 ```
 
-Then deploy the `.output/public` directory.
+Or manually:
+```bash
+npm run generate
+git checkout gh-pages
+# Copy files from .output/public to root
+git add -A
+git commit -m "Deploy update"
+git push origin gh-pages
+git checkout main
+```
+
+### Other Platforms
+
+This portfolio can also be deployed to:
+- **Vercel** - [vercel.com](https://vercel.com) (Recommended for auto-deployment)
+- **Netlify** - [netlify.com](https://netlify.com)
+- **Azure Static Web Apps** - [azure.microsoft.com](https://azure.microsoft.com)
 
 ## 📄 License
 
