@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   app: {
+    baseURL: '/portfolio/',
     head: {
       title: 'Muhammad Alif Haziq - Full Stack Developer',
       meta: [
