@@ -119,10 +119,10 @@
 
 /* Scroll Reveal */
 .scroll-reveal {
-  opacity: 0;
+  opacity: 1;
 }
 
-.scroll-reveal.active {
+.scroll-reveal.is-revealed {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
