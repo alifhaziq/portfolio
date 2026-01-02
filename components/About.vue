@@ -20,12 +20,8 @@
             <span class="font-semibold text-blue-600">Full Stack Developer</span> with 4 years of hands-on experience delivering enterprise-grade web applications. Proven track record in designing scalable backend systems, optimizing database performance, and building responsive user interfaces.
           </p>
           
-          <p class="text-gray-700 leading-relaxed mb-4">
-            <strong>Core Expertise:</strong> C#, ASP.NET Core, MVC, Web API, Repository Pattern, Clean Architecture, React, Vue.js, SQL/NoSQL databases, CI/CD pipelines, Azure DevOps
-          </p>
-          
           <p class="text-gray-700 leading-relaxed">
-            <strong>Career Goal:</strong> Seeking opportunities with <span class="font-semibold text-blue-600">GLC or MNC organizations</span> to contribute technical expertise in building reliable, high-impact digital solutions.
+            <strong>Core Expertise:</strong> C#, ASP.NET Core, MVC, Web API, Repository Pattern, Clean Architecture, React, Vue.js, SQL/NoSQL databases, CI/CD pipelines, Azure DevOps
           </p>
         </div>
         
