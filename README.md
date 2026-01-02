@@ -2,6 +2,12 @@
 
 A modern, responsive portfolio website built with Nuxt.js 3 and Tailwind CSS.
 
+## 🌐 Live Demo
+
+**[View Live Portfolio →](https://your-portfolio-link.vercel.app)**
+
+> Update this link after deployment!
+
 ## 🚀 Features
 
 - **Responsive Design** - Looks great on all devices
