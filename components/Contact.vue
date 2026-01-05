@@ -14,7 +14,7 @@
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
         <!-- Email -->
         <a 
-          href="mailto:haziqrosli@outlook.com" 
+          href="mailto:alifhaziq79@gmail.com" 
           class="group bg-white rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-reveal border-2 border-transparent hover:border-pink-200 flex items-center gap-6"
         >
           <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-12 transition-transform">
@@ -22,13 +22,14 @@
           </div>
           <div>
             <p class="text-sm font-semibold text-gray-500 mb-1">Email</p>
-            <p class="text-lg font-bold text-gray-900 group-hover:text-pink-600 transition-colors">haziqrosli@outlook.com</p>
+            <p class="text-lg font-bold text-gray-900 group-hover:text-pink-600 transition-colors">alifhaziq79@gmail.com</p>
           </div>
         </a>
         
         <!-- Phone -->
         <a 
-          href="tel:+60184650914" 
+          href="whatsapp:+60184650914" 
+          target="_blank"
           class="group bg-white rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-reveal delay-100 border-2 border-transparent hover:border-green-200 flex items-center gap-6"
         >
           <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-12 transition-transform">
@@ -57,7 +58,7 @@
         
         <!-- GitHub -->
         <a 
-          href="https://github.com/haziqrosli" 
+          href="https://github.com/alifhaziq" 
           target="_blank"
           class="group bg-white rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-reveal delay-300 border-2 border-transparent hover:border-purple-200 flex items-center gap-6"
         >
@@ -74,7 +75,7 @@
       <!-- CTA Button -->
       <div class="text-center mt-12 scroll-reveal delay-400">
         <a 
-          href="mailto:haziqrosli@outlook.com" 
+          href="mailto:alifhaziq79@gmail.com" 
           class="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-pink-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300"
         >
           <span class="group-hover:rotate-12 inline-block transition-transform text-2xl">✉️</span>
