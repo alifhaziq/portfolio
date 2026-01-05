@@ -4,6 +4,7 @@
     <Hero />
     <About />
     <Experience />
+    <Projects />
     <Skills />
     <Education />
     <Contact />

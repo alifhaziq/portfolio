@@ -1,9 +1,9 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-gray-100">
+  <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="#home" class="group text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
-          <span class="inline-block group-hover:scale-105 transition-transform">haziqcodes</span>
+        <a href="#home" class="flex items-center hover:scale-105 transition-transform duration-200">
+          <img src="~/assets/logo.png" alt="haziqcodes" style="height: 40px; width: auto;">
         </a>
         
         <!-- Desktop Navigation -->
@@ -13,31 +13,27 @@
             :key="item.href" 
             :href="item.href"
             @click="setActive(item.href)"
-            :class="[
-              'relative py-2 px-1 transition-all duration-300 group',
-              activeSection === item.href 
-                ? 'text-blue-600 font-semibold' 
-                : 'text-gray-700 hover:text-blue-600'
-            ]"
-          >
-            {{ item.label }}
-            <span 
-              :class="[
-                'absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300',
+             :class="[
+                'relative py-2 px-4 transition-all duration-200 group font-semibold rounded-lg',
                 activeSection === item.href 
-                  ? 'w-full' 
-                  : 'w-0 group-hover:w-full'
+                  ? 'text-purple-600 bg-purple-50' 
+                  : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
               ]"
-            ></span>
+            >
+              <span class="group-hover:scale-110 inline-block transition-transform">{{ item.label }}</span>
+              <span 
+                v-if="activeSection === item.href"
+                class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-purple-600 rounded-full"
+              ></span>
           </a>
         </div>
         
         <!-- Mobile Menu Button -->
         <button 
           @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden p-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
         >
-          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path 
               v-if="!mobileMenuOpen"
               stroke-linecap="round" 
@@ -67,7 +63,7 @@
       >
         <div 
           v-if="mobileMenuOpen"
-          class="md:hidden py-4 space-y-1 border-t border-gray-100 bg-gradient-to-br from-blue-50/50 to-purple-50/50"
+          class="md:hidden py-4 space-y-1 border-t border-gray-200 bg-gray-50"
         >
           <a 
             v-for="item in navItems" 
@@ -75,10 +71,10 @@
             :href="item.href"
             @click="setActive(item.href); mobileMenuOpen = false"
             :class="[
-              'block py-3 px-4 rounded-lg transition-all duration-300',
+              'block py-3 px-4 rounded-lg transition-all duration-200 font-medium',
               activeSection === item.href
-                ? 'text-blue-600 font-bold bg-white shadow-sm'
-                : 'text-gray-700 hover:text-blue-600 hover:bg-white/50'
+                ? 'text-blue-600 bg-white shadow-sm'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-white'
             ]"
           >
             {{ item.label }}
@@ -96,6 +92,7 @@ const activeSection = ref('#about')
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
@@ -122,7 +119,7 @@ onMounted(() => {
   )
 
   // Observe all sections
-  const sections = ['home', 'about', 'experience', 'skills', 'education', 'contact']
+  const sections = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact']
   sections.forEach((id) => {
     const element = document.getElementById(id)
     if (element) observer.observe(element)

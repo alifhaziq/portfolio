@@ -1,82 +1,92 @@
 <template>
-  <section id="about" class="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl"></div>
-    <div class="section-container relative z-10">
-      <h2 class="section-title text-center">
-        <span class="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent relative">
-          About Me
-          <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></span>
-        </span>
-      </h2>
+  <section id="about" class="bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
+    <div class="section-container">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 scroll-reveal inline-block hover:scale-105 transition-transform">
+          About Me <span class="text-4xl animate-bounce-subtle inline-block">👨‍💻</span>
+        </h2>
+        <div class="w-24 h-1.5 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full"></div>
+      </div>
       
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 mb-8 border border-blue-100/50 hover:border-blue-200 scroll-reveal">
-          <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 flex items-center">
-            <span class="w-1 h-8 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full mr-3"></span>
-            Professional Summary
-          </h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            <span class="font-semibold text-blue-600">Full Stack Developer</span> with 4 years of hands-on experience delivering enterprise-grade web applications. Proven track record in designing scalable backend systems, optimizing database performance, and building responsive user interfaces.
-          </p>
-          
-          <p class="text-gray-700 leading-relaxed">
-            <strong>Core Expertise:</strong> C#, ASP.NET Core, MVC, Web API, Repository Pattern, Clean Architecture, React, Vue.js, SQL/NoSQL databases, CI/CD pipelines, Azure DevOps
-          </p>
-        </div>
-        
-        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-shadow duration-300">
-          <h4 class="font-semibold text-gray-900 mb-3">Key Strengths:</h4>
-          <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
-            <li class="flex items-start">
-              <span class="text-blue-600 mr-2">✓</span>
-              <span>Full-stack development (Backend & Frontend)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-blue-600 mr-2">✓</span>
-              <span>Clean Architecture & Design Patterns</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-blue-600 mr-2">✓</span>
-              <span>Database design & optimization</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-blue-600 mr-2">✓</span>
-              <span>CI/CD & Agile methodologies</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-blue-600 mr-2">✓</span>
-              <span>Code review & quality assurance</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-blue-600 mr-2">✓</span>
-              <span>Team collaboration & mentoring</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-6 mt-8">
-          <div class="group relative bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-2 border-blue-400 scroll-reveal delay-100 overflow-hidden">
-            <div class="absolute inset-0 shimmer opacity-0 group-hover:opacity-100"></div>
-            <div class="relative z-10">
-              <div class="text-5xl font-bold text-white mb-3 group-hover:scale-110 transition-transform animate-bounce-slow">4+</div>
-              <div class="text-blue-100 font-semibold text-lg">Years Experience</div>
-            </div>
+      <div class="max-w-6xl mx-auto">
+        <!-- Stats Cards with Fun Hover -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div class="group bg-white rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-3 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-purple-200">
+            <div class="text-6xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-transform">⚡</div>
+            <div class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">4+</div>
+            <div class="text-gray-600 font-medium">Years Experience</div>
           </div>
           
-          <div class="group relative bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-2 border-purple-400 scroll-reveal delay-200 overflow-hidden">
-            <div class="absolute inset-0 shimmer opacity-0 group-hover:opacity-100"></div>
-            <div class="relative z-10">
-              <div class="text-5xl font-bold text-white mb-3 group-hover:scale-110 transition-transform animate-bounce-slow" style="animation-delay: 0.2s">10+</div>
-              <div class="text-purple-100 font-semibold text-lg">Technologies</div>
-            </div>
+          <div class="group bg-white rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-3 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-blue-200">
+            <div class="text-6xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-transform">🛠️</div>
+            <div class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">10+</div>
+            <div class="text-gray-600 font-medium">Technologies</div>
           </div>
           
-          <div class="group relative bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-2 border-pink-400 scroll-reveal delay-300 overflow-hidden">
-            <div class="absolute inset-0 shimmer opacity-0 group-hover:opacity-100"></div>
-            <div class="relative z-10">
-              <div class="text-5xl font-bold text-white mb-3 group-hover:scale-110 transition-transform animate-bounce-slow" style="animation-delay: 0.4s">5+</div>
-              <div class="text-pink-100 font-semibold text-lg">Major Projects</div>
+          <div class="group bg-white rounded-2xl p-8 text-center hover:shadow-xl hover:-translate-y-3 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-green-200">
+            <div class="text-6xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-transform">🚀</div>
+            <div class="text-5xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">5+</div>
+            <div class="text-gray-600 font-medium">Major Projects</div>
+          </div>
+        </div>
+        
+        <!-- Professional Summary -->
+        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg mb-8 scroll-reveal delay-400 hover:shadow-xl transition-shadow">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-3xl">💼</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+              Professional Summary
+            </h3>
+          </div>
+          
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            <span class="font-bold text-purple-600 hover:text-pink-600 transition-colors cursor-pointer">Full Stack Developer</span> with 4 years of hands-on experience delivering enterprise-grade web applications. Proven track record in designing scalable backend systems, optimizing database performance, and building responsive user interfaces.
+          </p>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 border-l-4 border-purple-600">
+            <p class="text-gray-900 font-semibold mb-2 flex items-center gap-2">
+              <span>🎯</span> Core Expertise:
+            </p>
+            <p class="text-gray-700">
+              C#, ASP.NET Core, MVC, Web API, Repository Pattern, Clean Architecture, React, Vue.js, SQL/NoSQL databases, CI/CD pipelines, Azure DevOps
+            </p>
+          </div>
+        </div>
+        
+        <!-- Key Strengths -->
+        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg scroll-reveal delay-500 hover:shadow-xl transition-shadow">
+          <h4 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <span class="text-2xl">✨</span> Key Strengths
+          </h4>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="group flex items-start gap-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+              <span class="text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform">💪</span>
+              <span class="text-gray-700 font-medium">Full-stack development (Backend & Frontend)</span>
+            </div>
+            
+            <div class="group flex items-start gap-3 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+              <span class="text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform">🏗️</span>
+              <span class="text-gray-700 font-medium">Clean Architecture & Design Patterns</span>
+            </div>
+            
+            <div class="group flex items-start gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+              <span class="text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform">💾</span>
+              <span class="text-gray-700 font-medium">Database design & optimization</span>
+            </div>
+            
+            <div class="group flex items-start gap-3 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+              <span class="text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform">🔄</span>
+              <span class="text-gray-700 font-medium">CI/CD & Agile methodologies</span>
+            </div>
+            
+            <div class="group flex items-start gap-3 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+              <span class="text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform">✅</span>
+              <span class="text-gray-700 font-medium">Code review & quality assurance</span>
+            </div>
+            
+            <div class="group flex items-start gap-3 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
+              <span class="text-xl group-hover:scale-125 group-hover:rotate-12 transition-transform">🤝</span>
+              <span class="text-gray-700 font-medium">Team collaboration & mentoring</span>
             </div>
           </div>
         </div>
@@ -87,4 +97,3 @@
 
 <script setup lang="ts">
 </script>
-
