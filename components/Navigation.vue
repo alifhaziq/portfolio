@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <a href="#home" class="flex items-center hover:scale-105 transition-transform duration-200">
-          <img src="~/assets/logo.png" alt="haziqcodes" style="height: 40px; width: auto;">
+          <img src="~/assets/logo.png" alt="haziqcodes" style="height: 200px; width: auto;">
         </a>
         
         <!-- Desktop Navigation -->
