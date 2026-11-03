@@ -1,57 +1,39 @@
 <template>
-  <section id="experience" class="bg-white">
+  <section id="experience" class="content-section section-soft" aria-labelledby="experience-title">
     <div class="section-container">
-      <div class="text-center mb-16">
-        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 scroll-reveal inline-block hover:scale-105 transition-transform">
-          Experience <span class="text-4xl animate-bounce-subtle inline-block">💼</span>
-        </h2>
-        <div class="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto rounded-full"></div>
+      <div class="section-intro">
+        <p class="eyebrow scroll-reveal">EXPERIENCE & EDUCATION</p>
+        <h2 id="experience-title" class="section-title scroll-reveal">Where I've<br /><span>been building.</span></h2>
       </div>
-      
-      <div class="max-w-4xl mx-auto space-y-8">
-        <!-- Software Engineer @ FGV Prodata System Sdn Bhd -->
-        <div class="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-reveal border-2 border-transparent hover:border-purple-200">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                Software Engineer
-              </h3>
-              <p class="text-lg font-semibold text-purple-600">
-                🏢 FGV Prodata System Sdn Bhd
-              </p>
-            </div>
-            <div class="mt-2 md:mt-0">
-              <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm font-semibold text-purple-600 border border-purple-200">
-                <span>📅</span>
-                Jan 2024 – Present
-              </span>
-            </div>
+
+      <ol class="timeline">
+        <li v-for="(job, index) in jobs" :key="job.company" class="timeline-item scroll-reveal" :class="`delay-${index * 100}`">
+          <time class="timeline-date">{{ job.period }}</time>
+          <div class="timeline-content">
+            <h3>{{ job.role }}</h3>
+            <p class="timeline-company">{{ job.company }}</p>
           </div>
-        </div>
-        
-        <!-- Backend Software Engineer @ Cloud Connect Sdn Bhd -->
-        <div class="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-reveal delay-200 border-2 border-transparent hover:border-blue-200">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                Backend Software Engineer
-              </h3>
-              <p class="text-lg font-semibold text-blue-600">
-                🏢 Cloud Connect Sdn Bhd
-              </p>
-            </div>
-            <div class="mt-2 md:mt-0">
-              <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm font-semibold text-blue-600 border border-blue-200">
-                <span>📅</span>
-                Jan 2022 – Jan 2024
-              </span>
-            </div>
+        </li>
+        <li class="timeline-item scroll-reveal delay-200">
+          <time class="timeline-date">2018 – 2021</time>
+          <div class="timeline-content">
+            <h3>Diploma in Computer Engineering</h3>
+            <p class="timeline-company">Politeknik Tuanku Syed Sirajuddin (PTSS)</p>
+            <ul class="timeline-points">
+              <li>Strong foundation in algorithms, data structures, and software engineering</li>
+              <li>Specialized in web development and database management</li>
+              <li>Completed final year project on enterprise web application development</li>
+            </ul>
           </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+const jobs = [
+  { role: 'Software Engineer', company: 'FGV Prodata System Sdn Bhd', period: 'Jan 2024 – Present' },
+  { role: 'Backend Software Engineer', company: 'Cloud Connect Sdn Bhd', period: 'Jan 2022 – Jan 2024' },
+]
 </script>

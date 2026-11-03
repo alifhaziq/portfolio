@@ -1,17 +1,18 @@
 <template>
   <div class="min-h-screen">
     <Navigation />
-    <Hero />
-    <About />
-    <Experience />
-    <Projects />
-    <Skills />
-    <Education />
-    <Contact />
+    <main>
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Experience />
+      <Education />
+      <Contact />
+    </main>
     <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
 </script>
-

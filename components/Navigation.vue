@@ -1,125 +1,107 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center items-center h-16 relative">
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a 
-            v-for="item in navItems" 
-            :key="item.href" 
-            :href="item.href"
-            @click="setActive(item.href)"
-             :class="[
-                'relative py-2 px-4 transition-all duration-200 group font-semibold rounded-lg',
-                activeSection === item.href 
-                  ? 'text-purple-600 bg-purple-50' 
-                  : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
-              ]"
-            >
-              <span class="group-hover:scale-110 inline-block transition-transform">{{ item.label }}</span>
-              <span 
-                v-if="activeSection === item.href"
-                class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-purple-600 rounded-full"
-              ></span>
-          </a>
-        </div>
-        
-        <!-- Mobile Menu Button -->
-        <button 
-          @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 absolute right-4"
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand-mark" href="#home" aria-label="Alif Haziq home">AH<span>.</span></a>
+
+      <div id="primary-navigation" class="nav-links" :class="{ 'nav-links-open': mobileMenuOpen }">
+        <a
+          v-for="item in navItems"
+          :key="item.href"
+          :href="item.href"
+          :class="{ 'nav-link-active': activeSection === item.href }"
+          @click="setActive(item.href)"
+        >{{ item.label }}</a>
+        <a class="nav-contact" href="#contact" @click="setActive('#contact')">
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Dark mode"
+          :aria-pressed="isDark"
+          @click="toggle"
         >
-          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path 
-              v-if="!mobileMenuOpen"
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-            <path 
-              v-else
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M6 18L18 6M6 6l12 12"
-            />
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" />
           </svg>
         </button>
-      </div>
-      
-      <!-- Mobile Navigation -->
-      <transition
-        enter-active-class="transition ease-out duration-200"
-        enter-from-class="opacity-0 -translate-y-2"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition ease-in duration-150"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 -translate-y-2"
-      >
-        <div 
-          v-if="mobileMenuOpen"
-          class="md:hidden py-4 space-y-1 border-t border-gray-200 bg-gray-50"
+
+        <button
+          class="menu-toggle"
+          type="button"
+          :aria-expanded="mobileMenuOpen"
+          aria-controls="primary-navigation"
+          :aria-label="mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+          @click="mobileMenuOpen = !mobileMenuOpen"
         >
-          <a 
-            v-for="item in navItems" 
-            :key="item.href" 
-            :href="item.href"
-            @click="setActive(item.href); mobileMenuOpen = false"
-            :class="[
-              'block py-3 px-4 rounded-lg transition-all duration-200 font-medium',
-              activeSection === item.href
-                ? 'text-blue-600 bg-white shadow-sm'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-white'
-            ]"
-          >
-            {{ item.label }}
-          </a>
-        </div>
-      </transition>
-    </div>
-  </nav>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" :style="{ transform: `scaleX(${progress})` }"></span>
+    </nav>
+  </header>
 </template>
 
 <script setup lang="ts">
+import { useTheme } from '~/composables/useTheme'
+
 const mobileMenuOpen = ref(false)
-const activeSection = ref('#about')
+const activeSection = ref('#home')
+const progress = ref(0)
+const { isDark, init: initTheme, toggle } = useTheme()
+let sectionObserver: IntersectionObserver | undefined
+let frame = 0
+
+const updateProgress = () => {
+  cancelAnimationFrame(frame)
+  frame = requestAnimationFrame(() => {
+    const max = document.documentElement.scrollHeight - window.innerHeight
+    progress.value = max > 0 ? Math.min(window.scrollY / max, 1) : 0
+  })
+}
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Experience', href: '#experience' },
 ]
 
 const setActive = (href: string) => {
   activeSection.value = href
+  mobileMenuOpen.value = false
 }
 
-// Auto-detect active section on scroll
 onMounted(() => {
-  const observer = new IntersectionObserver(
+  sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id')
-          if (id) {
-            activeSection.value = `#${id}`
-          }
-        }
+        if (entry.isIntersecting) activeSection.value = `#${entry.target.id}`
       })
     },
-    { threshold: 0.5 }
+    { rootMargin: '-30% 0px -60% 0px' },
   )
 
-  // Observe all sections
-  const sections = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact']
-  sections.forEach((id) => {
-    const element = document.getElementById(id)
-    if (element) observer.observe(element)
-  })
+  document.querySelectorAll('main section[id]').forEach((section) => sectionObserver?.observe(section))
+})
+
+onMounted(() => {
+  initTheme()
+  window.addEventListener('scroll', updateProgress, { passive: true })
+  updateProgress()
+})
+
+onBeforeUnmount(() => {
+  sectionObserver?.disconnect()
+  window.removeEventListener('scroll', updateProgress)
+  cancelAnimationFrame(frame)
 })
 </script>
-
