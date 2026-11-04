@@ -1,7 +1,7 @@
 <template>
   <footer class="site-footer">
     <a class="brand-mark footer-brand" href="#home" aria-label="Back to top">AH<span>.</span></a>
-    <p>Designed with intent. Built by Muhammad Alif Haziq.</p>
+    <p>Designed and Built by Muhammad Alif Haziq.</p>
     <p>© {{ currentYear }} <span>·</span> Made in Malaysia</p>
   </footer>
 </template>

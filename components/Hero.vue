@@ -30,10 +30,7 @@
               <path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </a>
-          <a href="#contact" class="button button-outline">Get in touch</a>
-          <a href="https://www.linkedin.com/in/haziqrosli96" class="button button-quiet" target="_blank" rel="noopener noreferrer">
-            LinkedIn <span aria-hidden="true">↗</span>
-          </a>
+          <a href="/Muhd_Alif_Haziq_CV.pdf" class="button button-outline" download>Download resume</a>
         </div>
 
         <dl class="hero-facts scroll-reveal delay-400">
